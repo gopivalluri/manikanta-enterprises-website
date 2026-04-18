@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manikanta Enterprises – Facility Services in Hyderabad</title>
+  <meta name="description" content="Manikanta Enterprises offers premium housekeeping, IT assets, manpower supply, and facility services in Hyderabad. Get a quote on WhatsApp today." />
+  <meta name="keywords" content="Facility Services in Hyderabad, Corporate Supplies Hyderabad, Housekeeping Hyderabad, IT Assets Hyderabad, Manpower Supply Hyderabad" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --red: #D32F2F;
+      --red-dark: #B71C1C;
+      --red-light: #EF5350;
+      --black: #111111;
+      --black-soft: #1a1a1a;
+      --gray-dark: #222222;
+      --gray-mid: #444444;
+      --gray-light: #888888;
+      --gray-border: #e5e5e5;
+      --gray-bg: #f8f8f8;
+      --white: #FFFFFF;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+      --shadow-md: 0 8px 32px rgba(0,0,0,0.12);
+      --shadow-lg: 0 16px 64px rgba(0,0,0,0.16);
+      --radius: 12px;
+      --radius-lg: 20px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--black);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    ul { list-style: none; }
+
+    /* ===== PAGE SYSTEM ===== */
+    .page { display: none; }
+    .page.active { display: block; }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(17,17,17,0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 0 24px;
+      height: 70px;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: all 0.3s ease;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      cursor: pointer;
+    }
+    .nav-logo-icon {
+      width: 40px; height: 40px;
+      background: var(--red);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 18px; color: white;
+      letter-spacing: -1px;
+    }
+    .nav-logo-text { font-weight: 700; font-size: 16px; color: white; line-height: 1.2; }
+    .nav-logo-sub { font-size: 10px; font-weight: 400; color: rgba(255,255,255,0.5); letter-spacing: 0.5px; }
+    .nav-links { display: flex; align-items: center; gap: 4px; }
+    .nav-link {
+      padding: 8px 16px;
+      color: rgba(255,255,255,0.75);
+      font-size: 14px; font-weight: 500;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .nav-link:hover, .nav-link.active { color: white; background: rgba(255,255,255,0.08); }
+    .nav-cta {
+      background: var(--red);
+      color: white !important;
+      padding: 8px 20px !important;
+      border-radius: 8px !important;
+      font-weight: 600 !important;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--red-dark) !important; }
+    .nav-hamburger {
+      display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px;
+    }
+    .nav-hamburger span {
+      width: 24px; height: 2px; background: white; border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .mobile-menu {
+      display: none;
+      position: fixed; top: 70px; left: 0; right: 0; z-index: 999;
+      background: var(--black);
+      padding: 16px;
+      flex-direction: column; gap: 4px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu .nav-link { font-size: 15px; padding: 12px 16px; }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      background: var(--black);
+      position: relative; overflow: hidden;
+      display: flex; align-items: center;
+      padding: 120px 24px 80px;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 50%, rgba(211,47,47,0.15) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 20% 80%, rgba(211,47,47,0.08) 0%, transparent 50%);
+    }
+    .hero-grid {
+      position: absolute; inset: 0; opacity: 0.04;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .hero-content { position: relative; z-index: 2; max-width: 1100px; margin: 0 auto; width: 100%; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(211,47,47,0.15);
+      border: 1px solid rgba(211,47,47,0.3);
+      color: var(--red-light);
+      padding: 6px 14px; border-radius: 100px;
+      font-size: 12px; font-weight: 600; letter-spacing: 0.5px;
+      margin-bottom: 24px;
+      animation: fadeUp 0.6s ease both;
+    }
+    .hero-badge::before { content: '●'; font-size: 8px; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 72px);
+      font-weight: 900;
+      color: white;
+      line-height: 1.1;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+      animation: fadeUp 0.6s 0.1s ease both;
+    }
+    .hero h1 span { color: var(--red); }
+    .hero-tagline {
+      font-size: clamp(15px, 2vw, 20px);
+      color: rgba(255,255,255,0.6);
+      font-weight: 400;
+      max-width: 560px;
+      line-height: 1.6;
+      margin-bottom: 40px;
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+    .hero-ctas {
+      display: flex; gap: 14px; flex-wrap: wrap;
+      animation: fadeUp 0.6s 0.3s ease both;
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--red);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-weight: 600; font-size: 15px;
+      transition: all 0.25s;
+      border: none; cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+      box-shadow: 0 4px 20px rgba(211,47,47,0.4);
+    }
+    .btn-primary:hover { background: var(--red-dark); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(211,47,47,0.5); }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: transparent;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-weight: 600; font-size: 15px;
+      border: 1.5px solid rgba(255,255,255,0.2);
+      cursor: pointer; transition: all 0.25s;
+      font-family: 'Poppins', sans-serif;
+    }
+    .btn-secondary:hover { border-color: white; background: rgba(255,255,255,0.06); }
+    .hero-stats {
+      display: flex; gap: 40px; flex-wrap: wrap;
+      margin-top: 64px; padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      animation: fadeUp 0.6s 0.4s ease both;
+    }
+    .hero-stat-num { font-size: 32px; font-weight: 800; color: white; line-height: 1; }
+    .hero-stat-num span { color: var(--red); }
+    .hero-stat-label { font-size: 13px; color: rgba(255,255,255,0.45); margin-top: 4px; font-weight: 400; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== SECTION STYLES ===== */
+    .section { padding: 96px 24px; }
+    .section-alt { background: var(--gray-bg); }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-tag {
+      display: inline-block;
+      background: rgba(211,47,47,0.08);
+      color: var(--red);
+      padding: 4px 12px; border-radius: 100px;
+      font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(26px, 4vw, 42px);
+      font-weight: 800; line-height: 1.15;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 16px; color: var(--gray-light);
+      max-width: 540px; line-height: 1.7; font-weight: 400;
+    }
+    .section-header { margin-bottom: 56px; }
+    .section-header-center { text-align: center; }
+    .section-header-center .section-sub { margin: 0 auto; }
+
+    /* ===== SERVICES GRID ===== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .service-card {
+      background: white;
+      border: 1px solid var(--gray-border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      transition: all 0.3s ease;
+      cursor: default;
+      position: relative; overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: var(--red);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .service-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); border-color: transparent; }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-icon {
+      width: 56px; height: 56px;
+      background: rgba(211,47,47,0.08);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px; margin-bottom: 20px;
+      transition: all 0.3s;
+    }
+    .service-card:hover .service-icon { background: var(--red); filter: brightness(1.2); }
+    .service-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+    .service-card p { font-size: 14px; color: var(--gray-light); line-height: 1.7; margin-bottom: 20px; }
+    .service-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--red); font-size: 13px; font-weight: 600;
+      cursor: pointer; transition: gap 0.2s;
+    }
+    .service-link:hover { gap: 10px; }
+
+    /* ===== WHY CHOOSE ===== */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 24px;
+    }
+    .why-card {
+      background: var(--black);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      color: white;
+      transition: all 0.3s;
+    }
+    .why-card:hover { background: var(--gray-dark); transform: translateY(-4px); }
+    .why-icon {
+      font-size: 36px; margin-bottom: 16px;
+    }
+    .why-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+    .why-card p { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.6; }
+
+    /* ===== HOW IT WORKS ===== */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0;
+      position: relative;
+    }
+    .step-item {
+      padding: 32px 24px;
+      text-align: center;
+      position: relative;
+    }
+    .step-num {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: var(--red);
+      color: white;
+      font-size: 20px; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px;
+      position: relative; z-index: 1;
+      box-shadow: 0 4px 16px rgba(211,47,47,0.4);
+    }
+    .step-item h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .step-item p { font-size: 13px; color: var(--gray-light); line-height: 1.6; }
+
+    /* ===== CTA BANNER ===== */
+    .cta-banner {
+      background: var(--red);
+      padding: 80px 24px;
+      text-align: center;
+    }
+    .cta-banner h2 { font-size: clamp(24px, 4vw, 42px); font-weight: 800; color: white; margin-bottom: 12px; }
+    .cta-banner p { color: rgba(255,255,255,0.75); font-size: 17px; margin-bottom: 32px; }
+    .btn-white {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: white; color: var(--red);
+      padding: 14px 32px; border-radius: 10px;
+      font-weight: 700; font-size: 15px;
+      transition: all 0.25s;
+      cursor: pointer; border: none; font-family: 'Poppins', sans-serif;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.25); }
+
+    /* ===== ABOUT PAGE ===== */
+    .about-hero {
+      background: var(--black);
+      padding: 140px 24px 80px;
+      color: white;
+    }
+    .about-content { max-width: 700px; }
+    .about-body { max-width: 1100px; margin: 0 auto; padding: 80px 24px; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    .about-text p { font-size: 15px; color: var(--gray-mid); line-height: 1.8; margin-bottom: 16px; }
+    .about-values { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
+    .value-item {
+      background: var(--gray-bg);
+      border-radius: var(--radius);
+      padding: 20px;
+      border-left: 3px solid var(--red);
+    }
+    .value-item h4 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+    .value-item p { font-size: 13px; color: var(--gray-light); }
+    .about-img-block {
+      background: var(--gray-bg);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      position: relative;
+    }
+    .about-img-block img { width: 100%; height: 100%; object-fit: cover; }
+    .about-img-placeholder {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 12px; color: var(--gray-light); font-size: 14px;
+    }
+    .about-img-placeholder .icon { font-size: 48px; }
+    .mission-vision { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; }
+    .mv-card {
+      background: var(--black);
+      border-radius: var(--radius-lg);
+      padding: 32px; color: white;
+    }
+    .mv-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 12px; }
+    .mv-card h3 span { color: var(--red); }
+    .mv-card p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.7; }
+
+    /* ===== SERVICES PAGE ===== */
+    .services-hero {
+      background: var(--black);
+      padding: 140px 24px 80px;
+      color: white;
+    }
+    .services-detail {
+      max-width: 1100px; margin: 0 auto;
+      padding: 80px 24px;
+    }
+    .service-detail-grid {
+      display: grid; gap: 32px;
+    }
+    .service-detail-card {
+      background: white;
+      border: 1px solid var(--gray-border);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 32px;
+      align-items: center;
+      transition: all 0.3s;
+    }
+    .service-detail-card:hover { box-shadow: var(--shadow-lg); border-color: transparent; }
+    .service-detail-icon {
+      width: 72px; height: 72px;
+      background: rgba(211,47,47,0.08);
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 32px; flex-shrink: 0;
+    }
+    .service-detail-content h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+    .service-detail-content p { font-size: 14px; color: var(--gray-light); line-height: 1.7; max-width: 500px; }
+    .service-detail-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+    .tag {
+      background: var(--gray-bg);
+      padding: 4px 10px; border-radius: 100px;
+      font-size: 11px; font-weight: 500; color: var(--gray-mid);
+    }
+    .service-detail-cta { flex-shrink: 0; }
+
+    /* ===== CONTACT PAGE ===== */
+    .contact-hero {
+      background: var(--black);
+      padding: 140px 24px 80px;
+      color: white;
+    }
+    .contact-body { max-width: 1100px; margin: 0 auto; padding: 80px 24px; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 48px; }
+    .contact-info h3 { font-size: 20px; font-weight: 700; margin-bottom: 24px; }
+    .contact-item {
+      display: flex; gap: 16px; margin-bottom: 24px;
+    }
+    .contact-item-icon {
+      width: 44px; height: 44px;
+      background: rgba(211,47,47,0.1);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; flex-shrink: 0;
+    }
+    .contact-item-text h4 { font-size: 14px; font-weight: 600; margin-bottom: 2px; }
+    .contact-item-text p { font-size: 14px; color: var(--gray-light); }
+    .wa-info-card {
+      background: #25D366;
+      border-radius: var(--radius-lg);
+      padding: 24px; margin-top: 32px;
+      color: white;
+    }
+    .wa-info-card h4 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+    .wa-info-card p { font-size: 13px; opacity: 0.85; margin-bottom: 16px; }
+    .btn-wa {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: white; color: #25D366;
+      padding: 10px 20px; border-radius: 8px;
+      font-weight: 700; font-size: 14px;
+      cursor: pointer; border: none; font-family: 'Poppins', sans-serif;
+      transition: all 0.2s;
+    }
+    .btn-wa:hover { transform: translateY(-1px); }
+    .contact-form-wrap {
+      background: var(--gray-bg);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+    }
+    .contact-form-wrap h3 { font-size: 22px; font-weight: 700; margin-bottom: 24px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: var(--gray-mid); }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid var(--gray-border);
+      border-radius: 8px;
+      font-size: 14px; font-family: 'Poppins', sans-serif;
+      background: white; color: var(--black);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus { border-color: var(--red); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .btn-submit {
+      width: 100%;
+      background: var(--red); color: white;
+      padding: 14px; border-radius: 10px;
+      font-size: 15px; font-weight: 700;
+      border: none; cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+      transition: all 0.25s;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .btn-submit:hover { background: var(--red-dark); transform: translateY(-1px); }
+    .success-msg {
+      display: none;
+      background: #e8f5e9;
+      border: 1.5px solid #4caf50;
+      border-radius: 10px;
+      padding: 20px; text-align: center;
+      color: #2e7d32; font-size: 15px; font-weight: 500;
+    }
+    .success-msg.show { display: block; }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--black);
+      color: white;
+      padding: 64px 24px 32px;
+    }
+    .footer-grid {
+      max-width: 1100px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand p { font-size: 14px; color: rgba(255,255,255,0.45); line-height: 1.7; margin: 16px 0 24px; max-width: 260px; }
+    .footer-social { display: flex; gap: 10px; }
+    .social-btn {
+      width: 36px; height: 36px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; cursor: pointer; transition: background 0.2s;
+    }
+    .social-btn:hover { background: var(--red); }
+    .footer-col h4 { font-size: 14px; font-weight: 700; margin-bottom: 16px; color: rgba(255,255,255,0.8); }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a, .footer-col ul li span {
+      font-size: 13px; color: rgba(255,255,255,0.45);
+      cursor: pointer; transition: color 0.2s;
+    }
+    .footer-col ul li a:hover, .footer-col ul li span:hover { color: white; }
+    .footer-bottom {
+      max-width: 1100px; margin: 0 auto;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 12px;
+    }
+    .footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.3); }
+
+    /* ===== WA FLOAT ===== */
+    .wa-float {
+      position: fixed; bottom: 28px; right: 28px; z-index: 9999;
+      width: 60px; height: 60px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+      cursor: pointer;
+      animation: waFloat 3s ease-in-out infinite;
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+    }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 8px 28px rgba(37,211,102,0.6); }
+    .wa-float svg { width: 32px; height: 32px; }
+    @keyframes waFloat {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    .wa-tooltip {
+      position: fixed; bottom: 36px; right: 96px; z-index: 9998;
+      background: var(--black);
+      color: white;
+      padding: 8px 14px; border-radius: 8px;
+      font-size: 13px; font-weight: 500;
+      white-space: nowrap;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.2s;
+    }
+    .wa-float:hover ~ .wa-tooltip { opacity: 1; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .mission-vision { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .service-detail-card { grid-template-columns: 1fr; }
+      .service-detail-cta { justify-self: start; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .hero-stats { gap: 24px; }
+      .about-values { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .hero-ctas { flex-direction: column; }
+      .hero-ctas .btn-primary, .hero-ctas .btn-secondary { width: 100%; justify-content: center; }
+    }
+
+    /* ===== SCROLL ANIMATION ===== */
+    .fade-in {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .fade-in:nth-child(2) { transition-delay: 0.1s; }
+    .fade-in:nth-child(3) { transition-delay: 0.2s; }
+    .fade-in:nth-child(4) { transition-delay: 0.3s; }
+    .fade-in:nth-child(5) { transition-delay: 0.4s; }
+    .fade-in:nth-child(6) { transition-delay: 0.5s; }
+
+    /* page transition */
+    .page { animation: pageFade 0.4s ease; }
+    @keyframes pageFade { from {opacity:0; transform:translateY(8px)} to {opacity:1; transform:translateY(0)} }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-logo" onclick="showPage('home')">
+    <div class="nav-logo-icon">ME</div>
+    <div>
+      <div class="nav-logo-text">Manikanta Enterprises</div>
+      <div class="nav-logo-sub">Hyderabad, India</div>
+    </div>
+  </div>
+  <div class="nav-links" id="navLinks">
+    <span class="nav-link active" onclick="showPage('home')">Home</span>
+    <span class="nav-link" onclick="showPage('about')">About</span>
+    <span class="nav-link" onclick="showPage('services')">Services</span>
+    <span class="nav-link" onclick="showPage('contact')">Contact</span>
+    <a class="nav-link nav-cta" href="https://wa.me/919999999999?text=Hello%20I%20am%20interested%20in%20your%20services.%20Please%20provide%20more%20details." target="_blank">💬 WhatsApp</a>
+  </div>
+  <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <span class="nav-link" onclick="showPage('home');toggleMenu()">Home</span>
+  <span class="nav-link" onclick="showPage('about');toggleMenu()">About</span>
+  <span class="nav-link" onclick="showPage('services');toggleMenu()">Services</span>
+  <span class="nav-link" onclick="showPage('contact');toggleMenu()">Contact</span>
+  <a class="nav-link" href="https://wa.me/919999999999?text=Hello%20I%20am%20interested%20in%20your%20services." target="_blank" style="color:white; background:#25D366; border-radius:8px; margin-top:4px;">💬 WhatsApp Us</a>
+</div>
+
+<!-- ===== HOME PAGE ===== -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-content">
+      <div class="hero-badge">🏢 Trusted Facility Partner · Hyderabad</div>
+      <h1>Manikanta<br /><span>Enterprises</span></h1>
+      <p class="hero-tagline">Your Trusted Partner for Housekeeping, IT Assets & Facility Services — delivering quality solutions across Hyderabad.</p>
+      <div class="hero-ctas">
+        <a class="btn-primary" href="https://wa.me/919999999999?text=Hello%20I%20am%20interested%20in%20your%20services.%20Please%20provide%20more%20details." target="_blank">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.968-1.301A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.96 7.96 0 01-4.354-1.294l-.31-.184-3.22.844.86-3.13-.202-.322A7.96 7.96 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+          Get Quote on WhatsApp
+        </a>
+        <button class="btn-secondary" onclick="showPage('services')">
+          View Services →
+        </button>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num">500<span>+</span></div>
+          <div class="hero-stat-label">Clients Served</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">6<span>+</span></div>
+          <div class="hero-stat-label">Service Categories</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">24<span>/7</span></div>
+          <div class="hero-stat-label">Support Available</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">100<span>%</span></div>
+          <div class="hero-stat-label">Satisfaction Rate</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES OVERVIEW -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header-center">
+        <div class="section-tag">Our Services</div>
+        <h2 class="section-title">Everything Your Business Needs</h2>
+        <p class="section-sub">From housekeeping to IT assets, we deliver end-to-end facility solutions for corporate clients across Hyderabad.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card fade-in">
+          <div class="service-icon">🧹</div>
+          <h3>Housekeeping Materials</h3>
+          <p>Premium quality cleaning supplies, hygiene products, and housekeeping essentials for offices and commercial spaces.</p>
+          <div class="service-link" onclick="showPage('services')">Learn More <span>→</span></div>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-icon">📎</div>
+          <h3>Stationary Items</h3>
+          <p>Complete range of corporate stationery, office supplies, and printing materials for all your business needs.</p>
+          <div class="service-link" onclick="showPage('services')">Learn More <span>→</span></div>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-icon">💻</div>
+          <h3>IT Assets</h3>
+          <p>Laptops, desktops, peripherals, networking equipment, and complete IT infrastructure solutions.</p>
+          <div class="service-link" onclick="showPage('services')">Learn More <span>→</span></div>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-icon">🎁</div>
+          <h3>Corporate Gifting</h3>
+          <p>Custom branded gifts, premium hampers, and corporate gifting solutions for every occasion and budget.</p>
+          <div class="service-link" onclick="showPage('services')">Learn More <span>→</span></div>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-icon">👷</div>
+          <h3>Manpower Supply</h3>
+          <p>Skilled and semi-skilled workforce for housekeeping, security, maintenance, and general services.</p>
+          <div class="service-link" onclick="showPage('services')">Learn More <span>→</span></div>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-icon">⚡</div>
+          <h3>Electrical & Plumbing</h3>
+          <p>Professional electrical installations, plumbing services, and facility maintenance by certified technicians.</p>
+          <div class="service-link" onclick="showPage('services')">Learn More <span>→</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header section-header-center">
+        <div class="section-tag">Why Us</div>
+        <h2 class="section-title">Why Choose Manikanta Enterprises</h2>
+        <p class="section-sub">We're committed to delivering reliable, high-quality facility services with a customer-first approach.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card fade-in">
+          <div class="why-icon">🛡️</div>
+          <h3>Reliable Service</h3>
+          <p>Consistent, dependable service delivery with zero compromise on quality. Trusted by 500+ businesses.</p>
+        </div>
+        <div class="why-card fade-in">
+          <div class="why-icon">💰</div>
+          <h3>Competitive Pricing</h3>
+          <p>Best-in-market pricing without compromising quality. Flexible packages for businesses of all sizes.</p>
+        </div>
+        <div class="why-card fade-in">
+          <div class="why-icon">⚡</div>
+          <h3>Fast Response</h3>
+          <p>Quick turnaround on quotes and delivery. Our team responds within hours, not days.</p>
+        </div>
+        <div class="why-card fade-in">
+          <div class="why-icon">🤝</div>
+          <h3>Trusted Vendor Network</h3>
+          <p>Access to premium vendors and suppliers across Hyderabad for all your facility requirements.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header-center">
+        <div class="section-tag">Process</div>
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-sub">Getting started is simple. Just 4 easy steps to get your facility needs handled.</p>
+      </div>
+      <div class="steps-grid fade-in">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <h3>Contact via WhatsApp</h3>
+          <p>Reach us on WhatsApp for instant communication. No lengthy forms, no delays.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <h3>Share Requirement</h3>
+          <p>Tell us what you need — services, quantities, timelines, and any special requirements.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <h3>Get Quotation</h3>
+          <p>Receive a detailed, transparent quote within hours. No hidden charges, ever.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-num">4</div>
+          <h3>Service Delivery</h3>
+          <p>We deliver on time, every time. Full support from order to completion.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <h2>Need Supplies or Services?</h2>
+    <p>Contact us today and get a free quote in under 2 hours. Available for all corporate clients in Hyderabad.</p>
+    <a class="btn-white" href="https://wa.me/919999999999?text=Hello%20I%20am%20interested%20in%20your%20services.%20Please%20provide%20more%20details." target="_blank">
+      💬 Contact Us on WhatsApp Now
+    </a>
+  </section>
+
+</div><!-- /page-home -->
+
+<!-- ===== ABOUT PAGE ===== -->
+<div id="page-about" class="page">
+  <section class="about-hero">
+    <div class="container">
+      <div class="about-content">
+        <div class="section-tag">About Us</div>
+        <h1 style="font-size:clamp(32px,5vw,56px); font-weight:900; letter-spacing:-1px; margin:12px 0 16px; line-height:1.1;">About Manikanta<br /><span style="color:var(--red)">Enterprises</span></h1>
+        <p style="font-size:17px; color:rgba(255,255,255,0.6); line-height:1.7; max-width:560px;">A trusted facility services company based in Hyderabad, committed to delivering excellence in every service we offer.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="about-body">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="section-tag">Our Story</div>
+        <h2 class="section-title" style="margin-bottom:24px;">Building Trust Through Quality Service</h2>
+        <p>Manikanta Enterprises is a premier facility services company headquartered in Hyderabad, India. We specialize in providing comprehensive solutions to corporate clients — from housekeeping materials and IT assets to manpower supply and facility maintenance.</p>
+        <p>Founded with a vision to bridge the gap between quality facility services and corporate demand, we have grown to serve over 500+ businesses across Hyderabad. Our team of dedicated professionals ensures every client receives personalized attention and best-in-class service.</p>
+        <p>We work with a trusted network of vendors and suppliers to ensure timely delivery and consistent quality. Whether you need daily housekeeping supplies or large-scale IT infrastructure, we have the expertise and resources to deliver.</p>
+
+        <div class="about-values" style="margin-top:32px;">
+          <div class="value-item">
+            <h4>🎯 Quality First</h4>
+            <p>Uncompromising standards in every delivery.</p>
+          </div>
+          <div class="value-item">
+            <h4>⏱️ On-Time Delivery</h4>
+            <p>We respect your timelines and commitments.</p>
+          </div>
+          <div class="value-item">
+            <h4>🤝 Client Focus</h4>
+            <p>Your success is our primary motivation.</p>
+          </div>
+          <div class="value-item">
+            <h4>📍 Local Expertise</h4>
+            <p>Deep knowledge of Hyderabad's market.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="about-img-block">
+          <div class="about-img-placeholder">
+            <div class="icon">🏢</div>
+            <p style="font-weight:600; color:var(--gray-mid);">Manikanta Enterprises</p>
+            <p style="font-size:12px;">Hyderabad, India</p>
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px;">
+          <div style="background:var(--red); border-radius:var(--radius); padding:24px; color:white; text-align:center;">
+            <div style="font-size:32px; font-weight:900;">500+</div>
+            <div style="font-size:12px; opacity:0.8; margin-top:4px;">Happy Clients</div>
+          </div>
+          <div style="background:var(--black); border-radius:var(--radius); padding:24px; color:white; text-align:center;">
+            <div style="font-size:32px; font-weight:900;">6+</div>
+            <div style="font-size:12px; opacity:0.6; margin-top:4px;">Services</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mission-vision">
+      <div class="mv-card">
+        <h3>Our <span>Mission</span></h3>
+        <p>To provide world-class facility management services that empower businesses in Hyderabad to focus on their core operations. We deliver reliable, cost-effective solutions with a commitment to quality, transparency, and customer satisfaction in every engagement.</p>
+      </div>
+      <div class="mv-card">
+        <h3>Our <span>Vision</span></h3>
+        <p>To be the most trusted and preferred facility services partner for corporate organizations across Hyderabad and Telangana — recognized for our integrity, innovation, and the lasting value we create for our clients and communities.</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="cta-banner">
+    <h2>Ready to Work With Us?</h2>
+    <p>Let's discuss your facility requirements and create a customized solution for your business.</p>
+    <a class="btn-white" href="https://wa.me/919999999999?text=Hello%20I%20am%20interested%20in%20your%20services.%20Please%20provide%20more%20details." target="_blank">💬 Get in Touch on WhatsApp</a>
+  </section>
+</div><!-- /page-about -->
+
+<!-- ===== SERVICES PAGE ===== -->
+<div id="page-services" class="page">
+  <section class="services-hero">
+    <div class="container">
+      <div class="section-tag">Services</div>
+      <h1 style="font-size:clamp(32px,5vw,56px); font-weight:900; letter-spacing:-1px; margin:12px 0 16px; line-height:1.1; color:white;">Our <span style="color:var(--red)">Services</span></h1>
+      <p style="font-size:17px; color:rgba(255,255,255,0.6); line-height:1.7; max-width:520px;">Complete facility management solutions for corporate clients in Hyderabad. Get a quote on any service via WhatsApp in minutes.</p>
+    </div>
+  </section>
+
+  <div class="services-detail">
+    <div class="service-detail-grid">
+
+      <div class="service-detail-card fade-in">
+        <div class="service-detail-icon">🧹</div>
+        <div class="service-detail-content">
+          <h3>Housekeeping Materials</h3>
+          <p>We supply a complete range of housekeeping and sanitation materials for offices, commercial buildings, and industrial facilities. From cleaning chemicals and mops to dustbins and washroom accessories — we source the best products at competitive prices.</p>
+          <div class="service-detail-tags">
+            <span class="tag">Cleaning Chemicals</span>
+            <span class="tag">Mops & Brooms</span>
+            <span class="tag">Washroom Supplies</span>
+            <span class="tag">Dustbins & Bags</span>
+            <span class="tag">Floor Care</span>
+          </div>
+        </div>
+        <div class="service-detail-cta">
+          <a class="btn-primary" href="https://wa.me/919999999999?text=Hello%2C%20I%20need%20a%20quote%20for%20Housekeeping%20Materials." target="_blank" style="white-space:nowrap;">💬 Get Quote</a>
+        </div>
+      </div>
+
+      <div class="service-detail-card fade-in">
+        <div class="service-detail-icon">📎</div>
+        <div class="service-detail-content">
+          <h3>Stationary Items</h3>
+          <p>Comprehensive stationery and office supplies for all your business needs. We offer bulk ordering, customized branding, and regular delivery schedules to keep your office fully stocked at all times.</p>
+          <div class="service-detail-tags">
+            <span class="tag">Paper & Notebooks</span>
+            <span class="tag">Pens & Markers</span>
+            <span class="tag">Files & Folders</span>
+            <span class="tag">Toners & Cartridges</span>
+            <span class="tag">Desk Accessories</span>
+          </div>
+        </div>
+        <div class="service-detail-cta">
+          <a class="btn-primary" href="https://wa.me/919999999999?text=Hello%2C%20I%20need%20a%20quote%20for%20Stationary%20Items." target="_blank" style="white-space:nowrap;">💬 Get Quote</a>
+        </div>
+      </div>
+
+      <div class="service-detail-card fade-in">
+        <div class="service-detail-icon">💻</div>
+        <div class="service-detail-content">
+          <h3>IT Assets</h3>
+          <p>End-to-end IT procurement solutions for corporate clients. We source, configure, and deliver laptops, desktops, servers, networking equipment, and all peripherals. Authorized reseller for major brands with warranty support.</p>
+          <div class="service-detail-tags">
+            <span class="tag">Laptops & Desktops</span>
+            <span class="tag">Printers & Scanners</span>
+            <span class="tag">Networking Equipment</span>
+            <span class="tag">UPS & Servers</span>
+            <span class="tag">CCTV & Security</span>
+          </div>
+        </div>
+        <div class="service-detail-cta">
+          <a class="btn-primary" href="https://wa.me/919999999999?text=Hello%2C%20I%20need%20a%20quote%20for%20IT%20Assets." target="_blank" style="white-space:nowrap;">💬 Get Quote</a>
+        </div>
+      </div>
+
+      <div class="service-detail-card fade-in">
+        <div class="service-detail-icon">🎁</div>
+        <div class="service-detail-content">
+          <h3>Corporate Gifting</h3>
+          <p>Make every occasion memorable with our premium corporate gifting solutions. Custom branding, elegant packaging, and bulk ordering available for employee gifting, client appreciation, and event giveaways.</p>
+          <div class="service-detail-tags">
+            <span class="tag">Branded Gifts</span>
+            <span class="tag">Hampers & Kits</span>
+            <span class="tag">Festival Gifts</span>
+            <span class="tag">Bulk Orders</span>
+            <span class="tag">Custom Branding</span>
+          </div>
+        </div>
+        <div class="service-detail-cta">
+          <a class="btn-primary" href="https://wa.me/919999999999?text=Hello%2C%20I%20need%20a%20quote%20for%20Corporate%20Gifting." target="_blank" style="white-space:nowrap;">💬 Get Quote</a>
+        </div>
+      </div>
+
+      <div class="service-detail-card fade-in">
+        <div class="service-detail-icon">👷</div>
+        <div class="service-detail-content">
+          <h3>Manpower Supply</h3>
+          <p>Reliable and trained manpower for housekeeping, security, pantry services, and general facility management. All personnel are background-verified, trained, and uniformed for professional representation.</p>
+          <div class="service-detail-tags">
+            <span class="tag">Housekeeping Staff</span>
+            <span class="tag">Security Guards</span>
+            <span class="tag">Pantry Boys</span>
+            <span class="tag">Maintenance Workers</span>
+            <span class="tag">Drivers</span>
+          </div>
+        </div>
+        <div class="service-detail-cta">
+          <a class="btn-primary" href="https://wa.me/919999999999?text=Hello%2C%20I%20need%20a%20quote%20for%20Manpower%20Supply." target="_blank" style="white-space:nowrap;">💬 Get Quote</a>
+        </div>
+      </div>
+
+      <div class="service-detail-card fade-in">
+        <div class="service-detail-icon">⚡</div>
+        <div class="service-detail-content">
+          <h3>Electrical & Plumbing</h3>
+          <p>Professional electrical and plumbing services for commercial properties. Certified technicians handle installations, repairs, AMC contracts, and emergency call-outs. Compliant with all safety standards and regulations.</p>
+          <div class="service-detail-tags">
+            <span class="tag">Electrical Wiring</span>
+            <span class="tag">Plumbing Repairs</span>
+            <span class="tag">Fixture Installation</span>
+            <span class="tag">AMC Contracts</span>
+            <span class="tag">Emergency Services</span>
+          </div>
+        </div>
+        <div class="service-detail-cta">
+          <a class="btn-primary" href="https://wa.me/919999999999?text=Hello%2C%20I%20need%20a%20quote%20for%20Electrical%20%26%20Plumbing." target="_blank" style="white-space:nowrap;">💬 Get Quote</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <section class="cta-banner">
+    <h2>Don't See What You Need?</h2>
+    <p>We handle custom requirements too. Chat with us and we'll find the right solution for your business.</p>
+    <a class="btn-white" href="https://wa.me/919999999999?text=Hello%20I%20have%20a%20custom%20requirement.%20Can%20you%20help%3F" target="_blank">💬 Discuss Custom Requirements</a>
+  </section>
+</div><!-- /page-services -->
+
+<!-- ===== CONTACT PAGE ===== -->
+<div id="page-contact" class="page">
+  <section class="contact-hero">
+    <div class="container">
+      <div class="section-tag">Contact Us</div>
+      <h1 style="font-size:clamp(32px,5vw,56px); font-weight:900; letter-spacing:-1px; margin:12px 0 16px; line-height:1.1; color:white;">Get In <span style="color:var(--red)">Touch</span></h1>
+      <p style="font-size:17px; color:rgba(255,255,255,0.6); line-height:1.7; max-width:480px;">Have a requirement? We'd love to help. Reach us via WhatsApp for the fastest response, or fill in the form below.</p>
+    </div>
+  </section>
+
+  <div class="contact-body">
+    <div class="contact-grid">
+      <div>
+        <h3>Contact Information</h3>
+        <div class="contact-item">
+          <div class="contact-item-icon">📍</div>
+          <div class="contact-item-text">
+            <h4>Address</h4>
+            <p>Hyderabad, Telangana, India – 500001</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📞</div>
+          <div class="contact-item-text">
+            <h4>Phone</h4>
+            <p>+91 99999 99999</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">✉️</div>
+          <div class="contact-item-text">
+            <h4>Email</h4>
+            <p>info@manikantaenterprises.com</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">⏰</div>
+          <div class="contact-item-text">
+            <h4>Business Hours</h4>
+            <p>Mon–Sat: 9:00 AM – 7:00 PM</p>
+          </div>
+        </div>
+
+        <div class="wa-info-card">
+          <h4>💬 Fastest Response: WhatsApp</h4>
+          <p>Chat with us directly on WhatsApp and get a quote within 2 hours. Available Monday to Saturday.</p>
+          <a class="btn-wa" href="https://wa.me/919999999999?text=Hello%20I%20am%20interested%20in%20your%20services.%20Please%20provide%20more%20details." target="_blank">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.968-1.301A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.96 7.96 0 01-4.354-1.294l-.31-.184-3.22.844.86-3.13-.202-.322A7.96 7.96 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+            Open WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap">
+        <h3>Send Us a Message</h3>
+        <div id="successMsg" class="success-msg">
+          ✅ Thank you! Your message has been received. We'll get back to you within 24 hours.
+        </div>
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name *</label>
+              <input type="text" placeholder="Your full name" required />
+            </div>
+            <div class="form-group">
+              <label>Phone Number *</label>
+              <input type="tel" placeholder="+91 XXXXX XXXXX" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="your@email.com" />
+          </div>
+          <div class="form-group">
+            <label>Service Required</label>
+            <select>
+              <option value="">Select a service</option>
+              <option>Housekeeping Materials</option>
+              <option>Stationary Items</option>
+              <option>IT Assets</option>
+              <option>Corporate Gifting</option>
+              <option>Manpower Supply</option>
+              <option>Electrical & Plumbing</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message *</label>
+            <textarea placeholder="Describe your requirement in detail..." required></textarea>
+          </div>
+          <button type="submit" class="btn-submit">📩 Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div><!-- /page-contact -->
+
+<!-- FOOTER -->
+<footer class="footer" id="main-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="nav-logo" style="cursor:default;">
+        <div class="nav-logo-icon">ME</div>
+        <div>
+          <div class="nav-logo-text">Manikanta Enterprises</div>
+          <div class="nav-logo-sub">Hyderabad, India</div>
+        </div>
+      </div>
+      <p>Your trusted partner for facility services, IT assets, housekeeping, and corporate supplies in Hyderabad. Quality you can count on.</p>
+      <div class="footer-social">
+        <div class="social-btn" title="WhatsApp">💬</div>
+        <div class="social-btn" title="LinkedIn">in</div>
+        <div class="social-btn" title="Email">✉</div>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><span onclick="showPage('home')">Home</span></li>
+        <li><span onclick="showPage('about')">About Us</span></li>
+        <li><span onclick="showPage('services')">Services</span></li>
+        <li><span onclick="showPage('contact')">Contact</span></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><span onclick="showPage('services')">Housekeeping</span></li>
+        <li><span onclick="showPage('services')">IT Assets</span></li>
+        <li><span onclick="showPage('services')">Manpower Supply</span></li>
+        <li><span onclick="showPage('services')">Corporate Gifting</span></li>
+        <li><span onclick="showPage('services')">Electrical & Plumbing</span></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><span>📍 Hyderabad, India</span></li>
+        <li><span>📞 +91 99999 99999</span></li>
+        <li><span>✉️ info@manikantaenterprises.com</span></li>
+        <li><a href="https://wa.me/919999999999?text=Hello" target="_blank" style="color:#25D366 !important; font-weight:600;">💬 Chat on WhatsApp</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 Manikanta Enterprises. All rights reserved. | Hyderabad, India</p>
+    <p>Facility Services in Hyderabad | Corporate Supplies Hyderabad</p>
+  </div>
+</footer>
+
+<!-- WA FLOAT BUTTON -->
+<a class="wa-float" href="https://wa.me/919999999999?text=Hello%20I%20am%20interested%20in%20your%20services.%20Please%20provide%20more%20details." target="_blank" title="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.968-1.301A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.96 7.96 0 01-4.354-1.294l-.31-.184-3.22.844.86-3.13-.202-.322A7.96 7.96 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/>
+  </svg>
+</a>
+<div class="wa-tooltip">Chat with us on WhatsApp</div>
+
+<script>
+  // PAGE NAVIGATION
+  function showPage(name) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page-' + name).classList.add('active');
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    document.querySelectorAll('.nav-link').forEach(l => {
+      if (l.textContent.trim().toLowerCase().startsWith(name)) l.classList.add('active');
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Trigger animations
+    setTimeout(triggerAnimations, 100);
+  }
+
+  // MOBILE MENU
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  // FORM SUBMIT
+  function handleSubmit(e) {
+    e.preventDefault();
+    document.getElementById('contactForm').style.display = 'none';
+    document.getElementById('successMsg').classList.add('show');
+  }
+
+  // SCROLL ANIMATIONS
+  function triggerAnimations() {
+    const els = document.querySelectorAll('.page.active .fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    els.forEach(el => observer.observe(el));
+  }
+
+  // NAVBAR SCROLL EFFECT
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+      nav.style.borderBottomColor = 'rgba(255,255,255,0.1)';
+    } else {
+      nav.style.borderBottomColor = 'rgba(255,255,255,0.06)';
+    }
+  });
+
+  // INIT
+  document.addEventListener('DOMContentLoaded', triggerAnimations);
+</script>
+</body>
+</html>
