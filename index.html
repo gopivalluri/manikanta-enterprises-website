@@ -10,12 +10,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --red: #D32F2F;
-      --red-dark: #B71C1C;
-      --red-light: #EF5350;
-      --black: #111111;
-      --black-soft: #1a1a1a;
-      --gray-dark: #222222;
+      --red: #FF6B00;
+      --red-dark: #E65100;
+      --red-light: #FF9100;
+      --black: #0D1B2A;
+      --black-soft: #0F2236;
+      --gray-dark: #162B3A;
       --gray-mid: #444444;
       --gray-light: #888888;
       --gray-border: #e5e5e5;
@@ -116,8 +116,8 @@
     .hero-bg {
       position: absolute; inset: 0;
       background:
-        radial-gradient(ellipse 80% 60% at 70% 50%, rgba(211,47,47,0.15) 0%, transparent 60%),
-        radial-gradient(ellipse 40% 40% at 20% 80%, rgba(211,47,47,0.08) 0%, transparent 50%);
+        radial-gradient(ellipse 80% 60% at 70% 50%, rgba(255,107,0,0.15) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 20% 80%, rgba(255,107,0,0.08) 0%, transparent 50%);
     }
     .hero-grid {
       position: absolute; inset: 0; opacity: 0.04;
@@ -129,8 +129,8 @@
     .hero-content { position: relative; z-index: 2; max-width: 1100px; margin: 0 auto; width: 100%; }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(211,47,47,0.15);
-      border: 1px solid rgba(211,47,47,0.3);
+      background: rgba(255,107,0,0.15);
+      border: 1px solid rgba(255,107,0,0.3);
       color: var(--red-light);
       padding: 6px 14px; border-radius: 100px;
       font-size: 12px; font-weight: 600; letter-spacing: 0.5px;
@@ -172,9 +172,9 @@
       transition: all 0.25s;
       border: none; cursor: pointer;
       font-family: 'Poppins', sans-serif;
-      box-shadow: 0 4px 20px rgba(211,47,47,0.4);
+      box-shadow: 0 4px 20px rgba(255,107,0,0.4);
     }
-    .btn-primary:hover { background: var(--red-dark); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(211,47,47,0.5); }
+    .btn-primary:hover { background: var(--red-dark); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(255,107,0,0.5); }
     .btn-secondary {
       display: inline-flex; align-items: center; gap: 10px;
       background: transparent;
@@ -208,7 +208,7 @@
     .container { max-width: 1100px; margin: 0 auto; }
     .section-tag {
       display: inline-block;
-      background: rgba(211,47,47,0.08);
+      background: rgba(255,107,0,0.08);
       color: var(--red);
       padding: 4px 12px; border-radius: 100px;
       font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
@@ -254,7 +254,7 @@
     .service-card:hover::before { transform: scaleX(1); }
     .service-icon {
       width: 56px; height: 56px;
-      background: rgba(211,47,47,0.08);
+      background: rgba(255,107,0,0.08);
       border-radius: 14px;
       display: flex; align-items: center; justify-content: center;
       font-size: 26px; margin-bottom: 20px;
@@ -311,7 +311,7 @@
       display: flex; align-items: center; justify-content: center;
       margin: 0 auto 16px;
       position: relative; z-index: 1;
-      box-shadow: 0 4px 16px rgba(211,47,47,0.4);
+      box-shadow: 0 4px 16px rgba(255,107,0,0.4);
     }
     .step-item h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
     .step-item p { font-size: 13px; color: var(--gray-light); line-height: 1.6; }
@@ -405,7 +405,7 @@
     .service-detail-card:hover { box-shadow: var(--shadow-lg); border-color: transparent; }
     .service-detail-icon {
       width: 72px; height: 72px;
-      background: rgba(211,47,47,0.08);
+      background: rgba(255,107,0,0.08);
       border-radius: 16px;
       display: flex; align-items: center; justify-content: center;
       font-size: 32px; flex-shrink: 0;
@@ -434,7 +434,7 @@
     }
     .contact-item-icon {
       width: 44px; height: 44px;
-      background: rgba(211,47,47,0.1);
+      background: rgba(255,107,0,0.1);
       border-radius: 10px;
       display: flex; align-items: center; justify-content: center;
       font-size: 18px; flex-shrink: 0;
