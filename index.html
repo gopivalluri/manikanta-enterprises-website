@@ -608,7 +608,22 @@
     .fade-in:nth-child(5) { transition-delay: 0.4s; }
     .fade-in:nth-child(6) { transition-delay: 0.5s; }
 
-    /* page transition */
+    .phone-wrap {
+      display:flex; border:1.5px solid var(--gray-border);
+      border-radius:8px; overflow:hidden; background:white;
+      transition:border-color 0.2s;
+    }
+    .phone-wrap:focus-within { border-color:var(--red); }
+    .phone-prefix {
+      padding:12px; font-size:14px; font-weight:600;
+      color:var(--gray-mid); background:var(--gray-bg);
+      border-right:1.5px solid var(--gray-border); white-space:nowrap;
+    }
+    .phone-wrap input { border:none; border-radius:0; outline:none; flex:1; min-width:0; }
+    .field-error { color:#e53935; font-size:12px; margin-top:4px; display:none; }
+    .field-error.show { display:block; }
+
+        /* page transition */
     .page { animation: pageFade 0.4s ease; }
     @keyframes pageFade { from {opacity:0; transform:translateY(8px)} to {opacity:1; transform:translateY(0)} }
   </style>
@@ -1063,7 +1078,8 @@
             </div>
             <div class="form-group">
               <label>Phone Number *</label>
-              <input type="tel" placeholder="+91 XXXXX XXXXX" required />
+              <div class="phone-wrap"><span class="phone-prefix">+91</span><input type="tel" id="phoneInput" placeholder="10-digit number" maxlength="10" required /></div>
+              <span class="field-error" id="phoneError">Please enter a valid 10-digit phone number</span>
             </div>
           </div>
           <div class="form-group">
@@ -1178,9 +1194,22 @@
   // FORM SUBMIT
   function handleSubmit(e) {
     e.preventDefault();
+    var ph = document.getElementById('phoneInput');
+    var err = document.getElementById('phoneError');
+    if (ph.value.length !== 10) { err.classList.add('show'); ph.focus(); return; }
+    err.classList.remove('show');
     document.getElementById('contactForm').style.display = 'none';
     document.getElementById('successMsg').classList.add('show');
   }
+  document.addEventListener('DOMContentLoaded', function() {
+    var ph = document.getElementById('phoneInput');
+    if (ph) ph.addEventListener('input', function() {
+      this.value = this.value.replace(/[^0-9]/g,'').slice(0,10);
+      var err = document.getElementById('phoneError');
+      if (this.value.length > 0 && this.value.length < 10) err.classList.add('show');
+      else err.classList.remove('show');
+    });
+  });
 
   // SCROLL ANIMATIONS
   function triggerAnimations() {
